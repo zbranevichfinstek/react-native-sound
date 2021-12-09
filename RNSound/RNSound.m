@@ -116,7 +116,7 @@ RCT_EXPORT_METHOD(enable : (BOOL)enabled) {
 
 RCT_EXPORT_METHOD(setActive : (BOOL)active) {
     AVAudioSession *session = [AVAudioSession sharedInstance];
-    [session setActive:active error:nil];
+    [session setActive:active withOptions:AVAudioSessionSetActiveOptionNotifyOthersOnDeactivation error:nil];
 }
 
 RCT_EXPORT_METHOD(setMode : (NSString *)modeName) {
